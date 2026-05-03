@@ -45,7 +45,7 @@ export default function Navigation() {
               alt="Pristine Construction"
               width={1945}
               height={1402}
-              className="h-12 w-auto md:h-14"
+              className="h-16 w-auto md:h-20"
               priority
             />
           </a>
