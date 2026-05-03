@@ -1,26 +1,39 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
+/* Refined neutrals — white-forward bands + quiet gray alternates (easy to see vs old yellow-greens) */
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-paper: #fafaf9;
+  --color-mist: #e9e7e2;
+  --color-stone: #dedad3;
+  --color-cream: #e8e6e1;
+  --color-cream-light: #fafaf9;
+  --color-tan: #cfcac2;
+  --color-tan-light: #dad6cf;
+  --color-sage: #8b9088;
+  --color-sage-light: #a8ada5;
+  --color-olive: #656a63;
+  --color-olive-light: #787d76;
+  --color-forest: #2f312e;
+  --color-forest-light: #3d403c;
+  --color-charcoal: #1a1b19;
+  --color-warm-gray: #656360;
+  --color-border: #cfcac240;
+  --color-background: #fafaf9;
+  --color-foreground: #2f312e;
+  --font-serif: var(--font-dm-serif);
+  --font-sans: var(--font-inter);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--color-background);
+  color: var(--color-foreground);
+  font-family: var(--font-sans), system-ui, sans-serif;
+}
+
+::selection {
+  background-color: rgb(139 144 136 / 0.25);
 }
