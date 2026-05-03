@@ -50,7 +50,7 @@ export default function Footer() {
               alt="Pristine Construction"
               width={1945}
               height={1402}
-              className="h-12 w-auto"
+              className="h-16 w-auto md:h-20"
             />
             <p className="mt-4 max-w-xs text-sm leading-relaxed text-sage/60">
               Premium residential remodeling in the Bay Area. Built with
