@@ -12,30 +12,41 @@ export default function ProjectGallery({ project, onImageClick }: ProjectGallery
   const n = project.images.length;
 
   return (
-    <div className="mt-10 md:mt-14">
-      <div className="columns-1 gap-6 md:columns-2 md:gap-7 lg:columns-3 lg:gap-8">
+    <div className="mt-12 md:mt-14">
+      <div className="columns-1 gap-8 md:columns-2 md:gap-x-10 md:gap-y-9 lg:gap-x-12 lg:gap-y-11 xl:columns-3">
         {project.images.map((src, i) => {
           const alt = `${project.title} — photograph ${i + 1} of ${n}`;
-          const stagger = i % 5 === 1 ? "md:mt-10" : i % 5 === 3 ? "md:-mt-2 lg:mt-6" : "";
+          const offset =
+            i % 7 === 1
+              ? "md:mt-12 xl:mt-16"
+              : i % 7 === 4
+                ? "md:-mt-1 xl:mt-10"
+                : i % 7 === 5
+                  ? "md:mt-8 xl:mt-4"
+                  : "";
 
           return (
-            <div key={src} className={`mb-6 break-inside-avoid md:mb-7 ${stagger}`}>
+            <figure
+              key={src}
+              className={`mb-8 break-inside-avoid md:mb-10 ${offset}`}
+            >
               <button
                 type="button"
                 onClick={() => onImageClick(i)}
-                className="group relative block w-full cursor-zoom-in overflow-hidden rounded-sm bg-charcoal/10 text-left ring-1 ring-charcoal/10 transition duration-500 hover:ring-olive/35 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-olive"
+                className="group relative block w-full cursor-zoom-in overflow-hidden rounded-[1px] bg-charcoal/[0.04] text-left ring-1 ring-charcoal/[0.06] transition duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] hover:ring-olive/28 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-olive"
               >
                 <Image
                   src={src}
                   alt={alt}
-                  width={2000}
-                  height={1334}
-                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                  loading={i < 4 ? "eager" : "lazy"}
-                  className="h-auto w-full transition duration-[900ms] ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-[1.015]"
+                  width={2400}
+                  height={1600}
+                  sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 33vw"
+                  loading={i < 3 ? "eager" : "lazy"}
+                  className="h-auto w-full object-contain transition duration-[1000ms] ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-[1.01]"
                 />
+                <span className="pointer-events-none absolute inset-0 bg-charcoal/0 transition duration-700 group-hover:bg-charcoal/[0.06]" />
               </button>
-            </div>
+            </figure>
           );
         })}
       </div>

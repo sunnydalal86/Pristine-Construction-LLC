@@ -38,6 +38,7 @@ const PROJECT_DEFS = [
     location: "Bay Area, CA",
     scope: "Design-build ADU — structure, envelope, interior build-out",
     completion: "Recent project",
+    coverImage: "DSC02103.jpg",
   },
   {
     sourceDir: "Bean Creek",
@@ -78,6 +79,7 @@ const PROJECT_DEFS = [
     location: "Bay Area, CA",
     scope: "Open plan refinement, kitchen and living zones",
     completion: "Recent project",
+    coverImage: "spoof (3 of 7).JPG",
   },
   {
     sourceDir: "Ellsworth St. (Whole House Remodel)",
@@ -98,6 +100,7 @@ const PROJECT_DEFS = [
     location: "Bay Area, CA",
     scope: "Curated interiors across distinct projects and scopes",
     completion: "Recent work",
+    coverImage: "spoof (1 of 10).JPG",
   },
   {
     sourceDir: "Nelson Ct.",
@@ -108,6 +111,7 @@ const PROJECT_DEFS = [
     location: "Bay Area, CA",
     scope: "Interior renovation, custom details, finish quality",
     completion: "Recent project",
+    coverImage: "DSC06718-HDR-Edit.jpg",
   },
 ];
 
@@ -147,13 +151,21 @@ function collectImages(dir) {
   );
 }
 
-function orderImagesForCover(slug, names) {
+function orderImagesForCover(names, preferredCover) {
   const copy = [...names];
   copy.sort((a, b) => {
     const d = scoreCover(b) - scoreCover(a);
     if (d !== 0) return d;
     return a.localeCompare(b, undefined, { numeric: true });
   });
+  if (preferredCover) {
+    const wanted = preferredCover.toLowerCase();
+    const idx = copy.findIndex((n) => n.toLowerCase() === wanted);
+    if (idx > 0) {
+      const [file] = copy.splice(idx, 1);
+      copy.unshift(file);
+    }
+  }
   return copy;
 }
 
@@ -182,7 +194,7 @@ function main() {
       continue;
     }
 
-    const ordered = orderImagesForCover(def.slug, srcImages);
+    const ordered = orderImagesForCover(srcImages, def.coverImage);
     const destDir = path.join(DEST_ROOT, def.slug);
     fs.mkdirSync(destDir, { recursive: true });
 

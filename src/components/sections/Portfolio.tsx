@@ -76,40 +76,43 @@ export default function Portfolio() {
   return (
     <SectionWrapper id="portfolio" bg="tan" className="relative overflow-hidden">
       <div
-        className="pointer-events-none absolute inset-0 text-forest [background-image:linear-gradient(90deg,rgb(47_49_46/0.045)_1px,transparent_1px),linear-gradient(rgb(47_49_46/0.045)_1px,transparent_1px)] [background-size:56px_56px] [mask-image:linear-gradient(180deg,black,transparent_95%)]"
+        className="pointer-events-none absolute inset-0 text-forest [background-image:linear-gradient(90deg,rgb(47_49_46/0.028)_1px,transparent_1px),linear-gradient(rgb(47_49_46/0.028)_1px,transparent_1px)] [background-size:72px_72px] [mask-image:linear-gradient(180deg,black_55%,transparent)]"
         aria-hidden
       />
 
-      <div className="relative text-center">
-        <p className="text-[10px] font-medium uppercase tracking-[0.26em] text-olive/50">
-          06 / Portfolio
+      <header className="relative mx-auto max-w-3xl text-center">
+        <p className="text-[10px] font-medium uppercase tracking-[0.32em] text-olive/45">
+          03 / Portfolio
         </p>
 
-        <div className="mx-auto mt-6 flex justify-center">
-          <div className="h-px w-14 bg-forest/12" />
+        <div className="mx-auto mt-8 flex justify-center">
+          <div className="h-px w-24 bg-forest/10" />
         </div>
 
-        <h2 className="mx-auto mt-7 max-w-xl font-serif text-[clamp(1.85rem,3.2vw,2.85rem)] tracking-[-0.025em] text-forest">
-          Featured Work
+        <h2 className="mx-auto mt-10 max-w-2xl font-serif text-[clamp(2rem,4.2vw,3.25rem)] font-normal leading-[1.06] tracking-[-0.035em] text-forest">
+          Featured Transformations
         </h2>
 
-        <p className="mx-auto mt-5 max-w-2xl text-[0.95rem] leading-[1.65] text-forest/55">
-          Explore a curated selection of Pristine Construction projects, showcasing the
-          craftsmanship, precision, and finish quality behind every build.
+        <p className="mx-auto mt-8 max-w-xl px-2 text-[0.98rem] font-normal leading-[1.75] tracking-[-0.01em] text-forest/52">
+          A curated look at the craftsmanship, finish quality, and project execution
+          behind the Pristine standard.
         </p>
 
-        <div className="mx-auto mt-8 h-px w-full max-w-sm bg-gradient-to-r from-transparent via-forest/12 to-transparent" />
-      </div>
+        <div className="mx-auto mt-12 h-px w-full max-w-xs bg-gradient-to-r from-transparent via-forest/12 to-transparent" />
+      </header>
 
       <PortfolioGrid projects={PROJECTS} onSelectProject={setSelectedId} />
 
-      <p className="relative mx-auto mt-16 max-w-lg text-center text-[0.88rem] leading-relaxed text-forest/48 lg:mt-20">
+      <p className="relative mx-auto mt-24 max-w-lg text-center text-[0.9rem] font-normal leading-[1.72] tracking-[-0.008em] text-forest/46 lg:mt-28">
         Every project reflects the Pristine standard: disciplined execution, clean
         finishes, and details built to last.
       </p>
 
-      <div className="relative mt-14 text-center lg:mt-18">
-        <Button href="#contact" variant="ghost">
+      <div className="relative mt-16 flex flex-col items-center justify-center gap-5 sm:flex-row sm:gap-6 lg:mt-20">
+        <Button href="#portfolio-explore" variant="ghost">
+          Explore the Portfolio
+        </Button>
+        <Button href="#contact" variant="solid">
           Discuss Your Project
         </Button>
       </div>

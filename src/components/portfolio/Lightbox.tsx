@@ -130,7 +130,8 @@ export default function Lightbox({
                       height={1600}
                       className="max-h-[min(78vh,800px)] w-auto max-w-full object-contain"
                       sizes="96vw"
-                      priority
+                      priority={open}
+                      loading={open ? "eager" : "lazy"}
                     />
                   </motion.div>
                 </AnimatePresence>

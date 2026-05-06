@@ -100,9 +100,9 @@ export default function Hero() {
             <Button
               href="#portfolio"
               variant="solid"
-              className="bg-cream-light text-forest hover:bg-white hover:shadow-lg"
+              className="whitespace-normal bg-cream-light px-6 text-center text-[0.72rem] leading-snug text-forest hover:bg-white hover:shadow-lg sm:px-7 sm:text-[0.8rem]"
             >
-              View Our Work
+              Featured Transformations
             </Button>
           </motion.div>
 
@@ -112,7 +112,7 @@ export default function Hero() {
             transition={{ duration: 0.8, delay: 1.2 }}
             className="mt-6 text-[11px] uppercase tracking-[0.2em] text-tan-light/50"
           >
-            Licensed &amp; Insured · San Jose, CA · Since 2014
+            San Jose, CA · Since 2014
           </motion.p>
         </div>
       </div>
