@@ -9,6 +9,7 @@ import SectionLabel from "../ui/SectionLabel";
 interface TeamMember {
   name: string;
   role: string;
+  specialty: string;
   image: string | null;
   bio: string;
 }
@@ -17,60 +18,70 @@ const TEAM: TeamMember[] = [
   {
     name: "Allan Garcia",
     role: "CEO / Founder",
+    specialty: "Project Management",
     image: "/images/team-allan.jpg",
     bio: "Allan is the driving force behind Pristine Construction. His journey began with a deep-rooted interest in the construction industry, shaped by family connections. Under his stewardship, the company has flourished — embracing innovative practices and maintaining an unwavering commitment to delivering exceptional results.",
   },
   {
     name: "Victor",
     role: "Master Electrician",
+    specialty: "Electrical Systems",
     image: "/images/team-victor.jpg",
     bio: "Victor specializes in residential electrical projects. From energy-efficient lighting to cutting-edge smart home technology, he ensures every home is both functional and modern. He also takes pride in educating homeowners about sustainable energy.",
   },
   {
     name: "Manuel",
     role: "Master Plumber",
+    specialty: "Plumbing & Water Systems",
     image: "/images/team-manuel.jpg",
     bio: "Manuel brings unparalleled plumbing expertise to every project. From advanced water filtration systems to eco-friendly layouts, his work is characterized by meticulous attention to detail and a focus on sustainability.",
   },
   {
     name: "Pil",
     role: "Master Tradesman",
+    specialty: "Structural Builds",
     image: "/images/team-pil.jpg",
     bio: "Pil is a master of multiple residential subtrades — from carpentry and masonry to plumbing and electrical. His versatility and mentorship have been a guiding influence in shaping Pristine Construction's foundation.",
   },
   {
     name: "Jose",
     role: "Plaster & Drywall Expert",
+    specialty: "Interior Finishes",
     image: "/images/team-jose.jpg",
     bio: "Jose's expertise ensures that every wall and ceiling is finished to the highest standard. His skillful craftsmanship in plastering and drywall has been pivotal in transforming residential spaces into beautiful, functional homes.",
   },
   {
     name: "Axel",
     role: "Multi-Trade Apprentice",
+    specialty: "General Construction",
     image: "/images/team-axel.jpg",
     bio: "Axel brings boundless energy and a positive attitude to every job site. Whether assisting with carpentry, plumbing, or drywall, his eagerness to learn makes him an invaluable and versatile part of our team.",
   },
   {
     name: "Arminio",
     role: "Master Tile Setter & Carpenter",
+    specialty: "Finish Carpentry & Tile",
     image: "/images/team-arminio.jpg",
     bio: "Arminio has mastered both tile setting and carpentry, bringing exceptional craftsmanship to each. His intricate tile designs and flawless finishes are consistently among the most striking features of our projects.",
   },
   {
     name: "Milton",
     role: "Painter",
+    specialty: "Paint & Decorative Finishes",
     image: "/images/team-milton.jpg",
     bio: "Milton brings artistry to every surface. From crisp, clean walls to intricate decorative finishes, his keen eye for color and detail creates results that are both visually stunning and enduring.",
   },
   {
     name: "Bhavik",
     role: "Architect",
+    specialty: "Architecture & Planning",
     image: "/images/team-bhavik.jpg",
     bio: "Bhavik brings a unique blend of creativity and technical expertise to every project. He translates client visions into detailed designs, integrating modern trends with timeless elements for spaces that are both contemporary and enduring.",
   },
   {
     name: "Yelena",
     role: "Interior Designer",
+    specialty: "Interior Design Coordination",
     image: null,
     bio: "Yelena crafts interiors that are both aesthetically pleasing and practical. Her work curating color palettes, selecting furnishings, and designing layouts ensures every home feels personalized, refined, and perfectly balanced.",
   },
@@ -84,15 +95,15 @@ function AvatarPlaceholder({ name }: { name: string }) {
     .slice(0, 2);
 
   return (
-    <div className="absolute inset-0 flex flex-col items-center justify-center bg-tan">
+    <div className="absolute inset-0 flex flex-col items-center justify-center bg-mist">
       <svg
-        className="mb-2 h-16 w-16 text-olive/40"
+        className="mb-2 h-14 w-14 text-olive/30"
         fill="currentColor"
         viewBox="0 0 24 24"
       >
         <path d="M12 12c2.7 0 4.8-2.1 4.8-4.8S14.7 2.4 12 2.4 7.2 4.5 7.2 7.2 9.3 12 12 12zm0 2.4c-3.2 0-9.6 1.6-9.6 4.8v2.4h19.2v-2.4c0-3.2-6.4-4.8-9.6-4.8z" />
       </svg>
-      <span className="text-lg font-serif text-forest/50">{initials}</span>
+      <span className="text-base font-serif text-forest/40">{initials}</span>
     </div>
   );
 }
@@ -118,43 +129,54 @@ function TeamBioModal({
   }, [onClose]);
 
   return (
-    <div
+    <motion.div
       className="fixed inset-0 z-[100] flex items-center justify-center p-4 sm:p-6"
       role="dialog"
       aria-modal="true"
       aria-labelledby="team-bio-title"
+      initial={false}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      transition={{ duration: 0.2 }}
     >
       <button
         type="button"
-        className="absolute inset-0 bg-forest/75 backdrop-blur-[2px]"
+        className="absolute inset-0 bg-forest/80 backdrop-blur-sm"
         onClick={onClose}
         aria-label="Close bio"
       />
-      <div className="relative z-10 max-h-[min(90vh,40rem)] w-full max-w-lg overflow-y-auto rounded-xl border border-tan/40 bg-cream-light p-6 shadow-2xl sm:p-8 md:max-w-xl">
+      <motion.div
+        className="relative z-10 max-h-[min(90vh,40rem)] w-full max-w-lg overflow-y-auto rounded-xl border border-tan/30 bg-cream-light p-7 shadow-2xl sm:p-9 md:max-w-xl"
+        initial={false}
+        animate={{ opacity: 1, y: 0, scale: 1 }}
+        transition={{ duration: 0.3, ease: "easeOut" }}
+      >
         <button
           type="button"
           onClick={onClose}
-          className="absolute right-3 top-3 rounded-md p-2 text-forest/50 transition-colors hover:bg-tan/30 hover:text-forest"
+          className="absolute right-4 top-4 rounded-md p-2 text-forest/40 transition-colors hover:bg-mist hover:text-forest"
           aria-label="Close"
         >
           <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M6 18L18 6M6 6l12 12" />
           </svg>
         </button>
-        <div className="mb-3 h-0.5 w-10 bg-olive/50" />
-        <p id="team-bio-title" className="pr-10 font-serif text-xl leading-tight tracking-[-0.02em] text-forest sm:text-2xl">
+
+        <span className="text-[10px] font-medium uppercase tracking-[0.15em] text-olive/60">
+          {member.specialty}
+        </span>
+        <p id="team-bio-title" className="mt-2 pr-10 font-serif text-xl leading-tight tracking-[-0.02em] text-forest sm:text-2xl">
           {member.name}
         </p>
-        <p className="mt-1 text-xs font-medium uppercase tracking-wider text-olive sm:text-sm">
+        <p className="mt-1 text-sm text-olive">
           {member.role}
         </p>
-        <p className="mt-5 text-base leading-[1.7] text-forest/80 sm:text-[1.0625rem]">
+        <div className="mt-5 h-px w-12 bg-olive/20" />
+        <p className="mt-5 text-[0.95rem] leading-[1.75] text-forest/70">
           {member.bio}
         </p>
-        <p className="mt-6 text-xs text-forest/40 sm:hidden">Tap outside or Close to return to the team.</p>
-        <p className="mt-6 hidden text-xs text-forest/40 sm:block">Click outside, Close, or press Esc.</p>
-      </div>
-    </div>
+      </motion.div>
+    </motion.div>
   );
 }
 
@@ -169,33 +191,34 @@ function TeamCard({
 }) {
   return (
     <motion.div
-      initial={{ opacity: 0, y: 20 }}
+      initial={{ opacity: 1, y: 0 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-50px" }}
       transition={{ delay: index * 0.05, duration: 0.5, ease: "easeOut" }}
     >
       <button
         type="button"
-        className="group relative aspect-[3/4] w-full cursor-pointer overflow-hidden rounded-lg text-left outline-none ring-olive transition-shadow focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-offset-cream-light"
+        className="group relative aspect-[3/4] w-full cursor-pointer overflow-hidden rounded-lg text-left outline-none ring-olive/50 transition-all duration-500 hover:shadow-xl focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-offset-cream-light"
         onClick={onOpenBio}
       >
         {member.image ? (
           <Image
             src={member.image}
-            alt={`${member.name}, ${member.role}. Open bio.`}
+            alt={`${member.name}, ${member.role}`}
             fill
-            className="object-cover transition-transform duration-500 group-hover:scale-105"
+            className="object-cover transition-all duration-700 group-hover:scale-[1.04]"
             sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 20vw"
           />
         ) : (
           <AvatarPlaceholder name={member.name} />
         )}
 
-        <div className="pointer-events-none absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/75 via-black/35 to-transparent px-4 pb-4 pt-16">
-          <p className="font-serif text-lg leading-tight text-cream-light">{member.name}</p>
-          <p className="mt-0.5 text-xs tracking-wide text-tan-light/85">{member.role}</p>
-          <p className="mt-2 text-[0.65rem] font-medium uppercase tracking-wider text-cream-light/75">
-            Read bio
+        <div className="pointer-events-none absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent px-4 pb-4 pt-20 transition-all duration-300 group-hover:from-black/85">
+          <p className="font-serif text-base leading-tight text-cream-light lg:text-lg">
+            {member.name}
+          </p>
+          <p className="mt-0.5 text-[10px] font-medium uppercase tracking-[0.12em] text-sage-light/80">
+            {member.specialty}
           </p>
         </div>
       </button>
@@ -212,17 +235,18 @@ export default function Team() {
         <div className="flex justify-center">
           <SectionLabel>Our Team</SectionLabel>
         </div>
-        <h2 className="mt-4 font-serif text-[clamp(1.75rem,3vw,2.75rem)] leading-[1.15] tracking-[-0.02em]">
-          The People Behind Pristine
+        <h2 className="mt-5 font-serif text-[clamp(1.75rem,3vw,2.75rem)] leading-[1.15] tracking-[-0.02em]">
+          Every Tradesperson Works for Us.
+          <br />
+          <span className="text-olive/70">Directly.</span>
         </h2>
-        <p className="mx-auto mt-4 max-w-2xl text-[1.0625rem] leading-relaxed text-forest/60">
-          Our in-house team of skilled tradespeople brings decades of combined
-          experience to every project — no subcontracting, no shortcuts. Select
-          anyone below to read their full bio.
+        <p className="mx-auto mt-5 max-w-xl text-[1rem] leading-relaxed text-forest/55">
+          No subcontractors. No temp crews. Our team brings decades of combined
+          experience and shows up on every project because they&rsquo;re ours.
         </p>
       </div>
 
-      <div className="mt-20 grid grid-cols-2 gap-5 sm:grid-cols-3 sm:gap-6 lg:mt-24 lg:grid-cols-5 lg:gap-8">
+      <div className="mt-16 grid grid-cols-2 gap-4 sm:grid-cols-3 sm:gap-5 lg:mt-20 lg:grid-cols-5 lg:gap-6">
         {TEAM.map((member, i) => (
           <TeamCard
             key={member.name}
@@ -237,10 +261,9 @@ export default function Team() {
         <TeamBioModal member={bioMember} onClose={() => setBioMember(null)} />
       ) : null}
 
-      {/* Full team photo */}
       <motion.div
-        className="mx-auto mt-20 max-w-3xl overflow-hidden rounded-lg lg:mt-24"
-        initial={{ opacity: 0, y: 20 }}
+        className="mx-auto mt-16 max-w-3xl overflow-hidden rounded-lg lg:mt-20"
+        initial={{ opacity: 1, y: 0 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, margin: "-50px" }}
         transition={{ duration: 0.6, ease: "easeOut" }}
@@ -248,7 +271,7 @@ export default function Team() {
         <div className="relative aspect-[16/9] overflow-hidden rounded-lg">
           <Image
             src="/images/team-yelena.webp"
-            alt="The Pristine Construction team"
+            alt="The Pristine Construction team on site"
             fill
             className="object-cover object-top"
             sizes="(max-width: 768px) 100vw, 768px"

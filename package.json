@@ -6,8 +6,10 @@
     "dev": "next dev --webpack --hostname 127.0.0.1",
     "dev:turbo": "next dev --turbopack --hostname 127.0.0.1",
     "dev:clean": "rm -rf .next && next dev --webpack --hostname 127.0.0.1",
+    "sync:portfolio": "node scripts/sync-portfolio-assets.mjs",
     "build": "next build",
-    "start": "next start",
+    "start": "npx --yes serve@14 out -l 3000 --no-clipboard",
+    "preview": "npm run build && npm run start",
     "lint": "eslint"
   },
   "dependencies": {

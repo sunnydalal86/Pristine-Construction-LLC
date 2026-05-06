@@ -1,9 +1,8 @@
 @import "tailwindcss";
 
-/* Refined neutrals — white-forward bands + quiet gray alternates (easy to see vs old yellow-greens) */
 @theme inline {
   --color-paper: #fafaf9;
-  --color-mist: #e9e7e2;
+  --color-mist: #f0efec;
   --color-stone: #dedad3;
   --color-cream: #e8e6e1;
   --color-cream-light: #fafaf9;
@@ -36,4 +35,42 @@ body {
 
 ::selection {
   background-color: rgb(139 144 136 / 0.25);
+}
+
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes subtle-drift {
+  0%, 100% {
+    transform: scale(1.02) translate(0, 0);
+  }
+  50% {
+    transform: scale(1.05) translate(-0.5%, -0.3%);
+  }
+}
+
+@keyframes draw-line {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+
+@keyframes pulse-subtle {
+  0%, 100% {
+    opacity: 0.4;
+  }
+  50% {
+    opacity: 0.7;
+  }
 }

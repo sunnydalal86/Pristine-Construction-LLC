@@ -18,12 +18,12 @@ export default function Button({
   onClick,
 }: ButtonProps) {
   const base =
-    "inline-flex items-center justify-center rounded-full px-7 py-3.5 text-sm font-medium tracking-wide transition-all duration-300 cursor-pointer";
+    "inline-flex items-center justify-center rounded-full px-7 py-3.5 text-[0.8rem] font-medium tracking-[0.04em] uppercase transition-all duration-400 cursor-pointer";
   const variants = {
     solid:
-      "bg-olive text-cream-light hover:bg-forest hover:scale-[1.02] hover:shadow-lg",
+      "bg-olive text-cream-light hover:bg-forest hover:shadow-lg active:scale-[0.98]",
     ghost:
-      "border border-tan text-forest hover:border-olive hover:scale-[1.02] hover:shadow-sm",
+      "border border-olive/30 text-forest hover:border-olive hover:bg-olive/5 active:scale-[0.98]",
   };
 
   const classes = `${base} ${variants[variant]} ${className}`;

@@ -1,5 +1,6 @@
 import Navigation from "@/components/sections/Navigation";
 import Hero from "@/components/sections/Hero";
+import TrustBar from "@/components/sections/TrustBar";
 import About from "@/components/sections/About";
 import Team from "@/components/sections/Team";
 import Services from "@/components/sections/Services";
@@ -14,6 +15,7 @@ export default function Home() {
     <>
       <Navigation />
       <Hero />
+      <TrustBar />
       <About />
       <Team />
       <Services />
