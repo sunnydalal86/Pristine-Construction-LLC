@@ -55,21 +55,21 @@ export default function Lightbox({
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
-          transition={{ duration: 0.35, ease: [0.32, 0.72, 0, 1] }}
-          className="fixed inset-0 z-[60] flex items-center justify-center bg-charcoal/92 backdrop-blur-[2px]"
+          transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
+          className="fixed inset-0 z-[60] flex items-center justify-center bg-charcoal/93 backdrop-blur-[6px]"
         >
           <button
             type="button"
             aria-label="Close gallery"
             onClick={onClose}
-            className="absolute inset-0 cursor-default"
+            className="absolute inset-0 cursor-default bg-charcoal/20"
           />
 
           <motion.div
-            initial={{ opacity: 0, scale: 0.985 }}
-            animate={{ opacity: 1, scale: 1 }}
-            exit={{ opacity: 0, scale: 0.99 }}
-            transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
+            initial={{ opacity: 0, y: 14, scale: 0.982 }}
+            animate={{ opacity: 1, y: 0, scale: 1 }}
+            exit={{ opacity: 0, y: 10, scale: 0.99 }}
+            transition={{ duration: 0.48, ease: [0.22, 1, 0.36, 1] }}
             className="relative z-[61] mx-auto flex max-h-[min(92vh,920px)] w-full max-w-[min(96vw,1200px)] flex-col px-4 md:px-6"
           >
             <div className="mb-4 flex shrink-0 items-center justify-between gap-4 text-cream-light/90">
@@ -83,7 +83,7 @@ export default function Lightbox({
                 <button
                   type="button"
                   onClick={onClose}
-                  className="relative flex h-9 w-9 items-center justify-center rounded-full border border-cream-light/25 text-cream-light transition hover:border-cream-light/50 hover:bg-cream-light/10"
+                  className="relative flex h-9 w-9 items-center justify-center rounded-full border border-cream-light/25 text-cream-light transition-[border-color,background-color,transform] duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] hover:border-cream-light/50 hover:bg-cream-light/10 hover:scale-[1.04] active:scale-[0.98]"
                   aria-label="Close"
                 >
                   <svg
@@ -108,7 +108,7 @@ export default function Lightbox({
                   e.stopPropagation();
                   onPrev();
                 }}
-                className="absolute left-0 z-[62] flex h-11 w-11 items-center justify-center rounded-full border border-cream-light/20 bg-charcoal/50 text-cream-light transition hover:border-cream-light/40 hover:bg-charcoal/80 md:-left-2"
+                className="absolute left-0 z-[62] flex h-11 w-11 items-center justify-center rounded-full border border-cream-light/20 bg-charcoal/50 text-cream-light transition-[border-color,background-color,transform] duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] hover:border-cream-light/45 hover:bg-charcoal/[0.76] hover:scale-[1.03] active:scale-[0.98] md:-left-2"
               >
                 <ChevronLeft className="h-5 w-5" />
               </button>
@@ -120,8 +120,8 @@ export default function Lightbox({
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     exit={{ opacity: 0 }}
-                    transition={{ duration: 0.3, ease: [0.32, 0.72, 0, 1] }}
-                    className="relative flex h-full max-h-[min(78vh,800px)] w-full items-center justify-center"
+                    transition={{ duration: 0.42, ease: [0.22, 1, 0.36, 1] }}
+                    className="relative flex h-full max-h-[min(78vh,800px)] w-full origin-center items-center justify-center [&_img]:transition-transform [&_img]:duration-[850ms] [&_img]:ease-[cubic-bezier(0.22,1,0.36,1)]"
                   >
                     <Image
                       src={src}
@@ -144,7 +144,7 @@ export default function Lightbox({
                   e.stopPropagation();
                   onNext();
                 }}
-                className="absolute right-0 z-[62] flex h-11 w-11 items-center justify-center rounded-full border border-cream-light/20 bg-charcoal/50 text-cream-light transition hover:border-cream-light/40 hover:bg-charcoal/80 md:-right-2"
+                className="absolute right-0 z-[62] flex h-11 w-11 items-center justify-center rounded-full border border-cream-light/20 bg-charcoal/50 text-cream-light transition-[border-color,background-color,transform] duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] hover:border-cream-light/45 hover:bg-charcoal/[0.76] hover:scale-[1.03] active:scale-[0.98] md:-right-2"
               >
                 <ChevronRight className="h-5 w-5" />
               </button>

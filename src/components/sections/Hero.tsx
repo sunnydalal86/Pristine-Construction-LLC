@@ -1,9 +1,15 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, useReducedMotion } from "framer-motion";
 import Button from "../ui/Button";
 
 export default function Hero() {
+  const reduceMotion = useReducedMotion() ?? false;
+
+  const soft = reduceMotion
+    ? { duration: 0 }
+    : { duration: 0.85, ease: [0.22, 1, 0.36, 1] as const };
+
   return (
     <section className="relative flex min-h-screen items-end overflow-hidden bg-charcoal">
       {/* Solid gradient backdrop (no photo — preview layout) */}
@@ -48,49 +54,55 @@ export default function Hero() {
       </div>
 
       <div className="relative z-10 mx-auto w-full max-w-6xl px-6 pb-20 md:px-8 md:pb-28 lg:pb-32">
-        <div className="max-w-2xl">
+        <div className="max-w-3xl">
           <motion.div
-            initial={false}
+            initial={reduceMotion ? false : { opacity: 0, scaleX: 0 }}
             animate={{ opacity: 1, scaleX: 1 }}
-            transition={{ duration: 0.6, ease: "easeOut", delay: 0.3 }}
-            className="mb-8 h-px w-20 origin-left bg-sage"
+            transition={{ ...soft, delay: reduceMotion ? 0 : 0.15 }}
+            className="mb-8 h-px w-24 origin-left bg-sage-light/85"
           />
 
           <motion.span
-            initial={false}
+            initial={reduceMotion ? false : { opacity: 0, y: 14 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, ease: "easeOut", delay: 0.4 }}
+            transition={{ ...soft, delay: reduceMotion ? 0 : 0.22 }}
             className="mb-4 block text-[11px] font-medium uppercase tracking-[0.25em] text-sage-light/90"
           >
             Bay Area Design-Build
           </motion.span>
 
           <motion.h1
-            initial={false}
+            initial={reduceMotion ? false : { opacity: 0, y: 22 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, ease: "easeOut", delay: 0.5 }}
-            className="font-serif text-[clamp(2.5rem,5vw,4.5rem)] leading-[1.05] tracking-[-0.03em] text-cream-light"
+            transition={{ ...soft, delay: reduceMotion ? 0 : 0.32 }}
+            className="font-serif text-[clamp(2rem,4.2vw,3.85rem)] leading-[1.08] tracking-[-0.035em] text-cream-light"
           >
-            High-End Remodeling
-            <br />
-            <span className="text-sage-light/90">Without the Headaches.</span>
+            <span className="block pb-2 sm:pb-2.5 md:pb-3">Bay Area Remodeling</span>
+            <span className="block">
+              Built Around{" "}
+              <span className="text-sage-light/[0.92]">
+                Precision, Communication, and Craftsmanship
+              </span>
+            </span>
           </motion.h1>
 
           <motion.p
-            initial={false}
+            initial={reduceMotion ? false : { opacity: 0, y: 18 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, ease: "easeOut", delay: 0.7 }}
-            className="mt-6 max-w-xl text-[1.05rem] font-light leading-[1.7] text-cream/70 md:text-lg"
+            transition={{ ...soft, delay: reduceMotion ? 0 : 0.46 }}
+            className="mt-7 max-w-2xl text-[1.04rem] font-light leading-[1.78] text-cream/71 md:text-[1.065rem]"
           >
-            Kitchens, bathrooms, ADUs, and full remodels — executed end-to-end
-            by our in-house team. Clear communication from planning to
-            completion.
+            Kitchens, bathrooms, ADUs, and full-home remodels — delivered by an
+            in-house team with dedicated project management. From structured
+            planning through final punch list, you work with accountable people,
+            predictable cadence, and workmanship you can scrutinize — not vague
+            timelines or crews that vanish mid-project.
           </motion.p>
 
           <motion.div
-            initial={false}
+            initial={reduceMotion ? false : { opacity: 0, y: 14 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, ease: "easeOut", delay: 0.9 }}
+            transition={{ ...soft, delay: reduceMotion ? 0 : 0.58 }}
             className="mt-10 flex flex-wrap gap-4"
           >
             <Button href="#contact" variant="solid">
@@ -102,30 +114,32 @@ export default function Hero() {
               variant="solid"
               className="whitespace-normal bg-cream-light px-6 text-center text-[0.72rem] leading-snug text-forest hover:bg-white hover:shadow-lg sm:px-7 sm:text-[0.8rem]"
             >
-              Featured Transformations
+              View Curated Projects
             </Button>
           </motion.div>
 
           <motion.p
-            initial={false}
+            initial={reduceMotion ? false : { opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ duration: 0.8, delay: 1.2 }}
-            className="mt-6 text-[11px] uppercase tracking-[0.2em] text-tan-light/50"
+            transition={{ duration: reduceMotion ? 0 : 0.9, delay: reduceMotion ? 0 : 0.85 }}
+            className="mt-7 text-[11px] uppercase tracking-[0.2em] text-tan-light/48"
           >
-            San Jose, CA · Since 2014
+            Licensed · Insured · San Jose, CA · Since 2014
           </motion.p>
         </div>
       </div>
 
       <motion.div
         className="absolute bottom-3 left-1/2 hidden -translate-x-1/2 md:block"
-        initial={false}
+        initial={reduceMotion ? false : { opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ delay: 1.5, duration: 0.8 }}
+        transition={{ delay: reduceMotion ? 0 : 1.1, duration: reduceMotion ? 0 : 0.85, ease: [0.22, 1, 0.36, 1] }}
       >
         <motion.div
-          animate={{ y: [0, 6, 0] }}
-          transition={{ repeat: Infinity, duration: 2.5, ease: "easeInOut" }}
+          animate={reduceMotion ? undefined : { y: [0, 5, 0] }}
+          transition={
+            reduceMotion ? undefined : { repeat: Infinity, duration: 2.8, ease: [0.45, 0, 0.55, 1] }
+          }
           className="flex flex-col items-center gap-2"
         >
           <span className="text-[9px] uppercase tracking-[0.25em] text-tan/40">

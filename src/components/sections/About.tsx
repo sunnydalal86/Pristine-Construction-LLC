@@ -2,7 +2,6 @@
 
 import { motion } from "framer-motion";
 import SectionWrapper from "../ui/SectionWrapper";
-import SectionLabel from "../ui/SectionLabel";
 
 const PRINCIPLES = [
   {
@@ -35,7 +34,12 @@ export default function About() {
     <SectionWrapper id="about" bg="tan">
       <div className="grid gap-16 lg:grid-cols-[1fr,1.1fr] lg:gap-24">
         <div>
-          <SectionLabel>About Pristine</SectionLabel>
+          <p className="text-[10px] font-medium uppercase tracking-[0.32em] text-olive/50">
+            01 / About
+          </p>
+          <div className="mt-8 flex items-center gap-3">
+            <div className="h-px w-8 bg-olive/40" />
+          </div>
           <h2 className="mt-5 font-serif text-[clamp(1.75rem,3vw,2.75rem)] leading-[1.12] tracking-[-0.02em]">
             Your Home Shouldn&rsquo;t Feel
             <br />

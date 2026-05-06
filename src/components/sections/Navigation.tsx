@@ -7,6 +7,7 @@ import Button from "../ui/Button";
 
 const NAV_LINKS = [
   { label: "About", href: "#about" },
+  { label: "Process", href: "#process" },
   { label: "Team", href: "#team" },
   { label: "Services", href: "#services" },
   { label: "Portfolio", href: "#portfolio" },
@@ -27,7 +28,7 @@ export default function Navigation() {
   return (
     <>
       <nav
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
+        className={`fixed top-0 left-0 right-0 z-50 transition-[background-color,box-shadow,border-color] duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] ${
           scrolled
             ? "bg-cream-light/95 backdrop-blur-md shadow-sm border-b border-tan/20"
             : "bg-transparent"
@@ -50,7 +51,7 @@ export default function Navigation() {
               <a
                 key={link.href}
                 href={link.href}
-                className={`text-[0.8rem] font-medium tracking-wide transition-colors duration-300 ${
+                className={`text-[0.8rem] font-medium tracking-wide transition-colors duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] ${
                   scrolled
                     ? "text-forest/55 hover:text-olive"
                     : "text-cream/70 hover:text-cream"

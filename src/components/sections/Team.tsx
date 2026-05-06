@@ -4,7 +4,6 @@ import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import SectionWrapper from "../ui/SectionWrapper";
-import SectionLabel from "../ui/SectionLabel";
 
 interface TeamMember {
   name: string;
@@ -232,10 +231,13 @@ export default function Team() {
   return (
     <SectionWrapper id="team" bg="cream">
       <div className="text-center">
-        <div className="flex justify-center">
-          <SectionLabel>Our Team</SectionLabel>
+        <p className="text-[10px] font-medium uppercase tracking-[0.32em] text-olive/50">
+          03 / Team
+        </p>
+        <div className="mx-auto mt-8 flex justify-center">
+          <div className="h-px w-14 bg-olive/22" />
         </div>
-        <h2 className="mt-5 font-serif text-[clamp(1.75rem,3vw,2.75rem)] leading-[1.15] tracking-[-0.02em]">
+        <h2 className="mt-8 font-serif text-[clamp(1.75rem,3vw,2.75rem)] leading-[1.15] tracking-[-0.02em]">
           Every Tradesperson Works for Us.
           <br />
           <span className="text-olive/70">Directly.</span>

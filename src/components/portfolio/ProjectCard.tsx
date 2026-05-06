@@ -22,12 +22,12 @@ export default function ProjectCard({
 
   return (
     <motion.article
-      initial={{ opacity: 0, y: 16 }}
+      initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: "-60px" }}
+      viewport={{ once: true, margin: "-80px" }}
       transition={{
-        delay: Math.min(index * 0.05, 0.35),
-        duration: 0.65,
+        delay: Math.min(index * 0.06, 0.4),
+        duration: 0.78,
         ease: [0.22, 1, 0.36, 1],
       }}
       className={`h-full ${layoutClass}`}
@@ -36,14 +36,14 @@ export default function ProjectCard({
         type="button"
         onClick={onOpen}
         aria-label={`${project.title} — view gallery`}
-        className="group relative flex h-full min-h-[inherit] w-full cursor-pointer flex-col overflow-hidden rounded-[2px] bg-charcoal/[0.06] text-left shadow-[0_1px_0_rgba(47,49,46,0.04),0_20px_50px_-28px_rgba(26,27,25,0.28)] ring-1 ring-charcoal/[0.07] transition-[box-shadow,ring-color] duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] hover:shadow-[0_24px_60px_-26px_rgba(26,27,25,0.35)] hover:ring-olive/20 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-olive"
+        className="group relative flex h-full min-h-[inherit] w-full cursor-pointer flex-col overflow-hidden rounded-[1px] bg-charcoal/[0.05] text-left shadow-[0_1px_0_rgba(47,49,46,0.04),0_24px_55px_-30px_rgba(26,27,25,0.32)] ring-1 ring-charcoal/[0.06] transition-[box-shadow,transform,ring-color] duration-[900ms] ease-[cubic-bezier(0.22,1,0.36,1)] hover:-translate-y-0.5 hover:shadow-[0_28px_70px_-28px_rgba(26,27,25,0.38)] hover:ring-olive/18 active:translate-y-0 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-olive"
       >
         <div className="relative min-h-0 flex-1 overflow-hidden">
           <Image
             src={cover}
             alt=""
             fill
-            className="object-cover object-center transition-[transform,filter] duration-[1100ms] ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-[1.035]"
+            className="object-cover object-center transition-[transform,filter] duration-[1.35s] ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-[1.02]"
             sizes={
               isHero
                 ? "(max-width:768px) 100vw, (max-width:1024px) 100vw, 66vw"
@@ -53,17 +53,17 @@ export default function ProjectCard({
           />
 
           <div
-            className="pointer-events-none absolute inset-0 bg-gradient-to-t from-charcoal/82 via-charcoal/28 to-charcoal/[0.02] transition-opacity duration-700 group-hover:from-charcoal/88 group-hover:via-charcoal/50"
+            className="pointer-events-none absolute inset-0 bg-gradient-to-t from-charcoal/82 via-charcoal/28 to-charcoal/[0.02] transition-opacity duration-[900ms] ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:from-charcoal/88 group-hover:via-charcoal/48"
             aria-hidden
           />
 
           <div
-            className="pointer-events-none absolute inset-0 bg-charcoal/0 transition-colors duration-600 group-hover:bg-charcoal/25"
+            className="pointer-events-none absolute inset-0 bg-charcoal/0 transition-colors duration-[800ms] ease-out group-hover:bg-charcoal/20"
             aria-hidden
           />
 
           <div className="absolute inset-x-0 bottom-0 p-5 md:p-7 lg:p-8">
-            <div className="mb-4 h-px max-w-[72px] bg-cream-light/40 transition-all duration-600 ease-out group-hover:max-w-[112px] group-hover:bg-cream-light/60" />
+            <div className="mb-4 h-px max-w-[72px] bg-cream-light/40 transition-all duration-[800ms] ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:max-w-[120px] group-hover:bg-cream-light/55" />
 
             <p className="text-[9px] font-medium uppercase tracking-[0.28em] text-cream-light/42 transition-colors duration-500 group-hover:text-cream-light/55">
               {project.category}

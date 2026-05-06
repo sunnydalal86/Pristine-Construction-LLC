@@ -2,6 +2,7 @@ import Image from "next/image";
 
 const NAV_LINKS = [
   { label: "About", href: "#about" },
+  { label: "Process", href: "#process" },
   { label: "Services", href: "#services" },
   { label: "Portfolio", href: "#portfolio" },
   { label: "Blog", href: "#blog" },
@@ -40,86 +41,105 @@ const SOCIAL_LINKS = [
 
 export default function Footer() {
   return (
-    <footer className="bg-charcoal text-cream-light">
-      <div className="mx-auto max-w-6xl px-6 py-16 md:px-8 md:py-20">
-        <div className="grid gap-12 md:grid-cols-3 lg:gap-16">
-          <div>
+    <footer className="relative overflow-hidden bg-charcoal text-cream-light">
+      <div
+        className="pointer-events-none absolute -right-[8%] bottom-0 select-none font-serif text-[clamp(5.5rem,18vw,14rem)] font-light leading-none tracking-[-0.06em] text-cream/[0.03]"
+        aria-hidden
+      >
+        PRISTINE
+      </div>
+
+      <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-cream/[0.08] to-transparent" />
+
+      <div className="relative mx-auto max-w-6xl px-6 pb-14 pt-20 md:px-8 md:pb-20 md:pt-24 lg:pb-24 lg:pt-28">
+        <div className="grid gap-14 border-b border-cream/[0.06] pb-16 md:grid-cols-12 md:gap-12 md:pb-20 lg:gap-16">
+          <div className="md:col-span-5">
             <Image
               src="/images/logo.png"
               alt="Pristine Construction"
               width={1945}
               height={1402}
-              className="h-14 w-auto md:h-16"
+              className="h-14 w-auto md:h-[4.25rem]"
             />
-            <p className="mt-5 max-w-xs text-[0.8rem] leading-relaxed text-cream/35">
-              Premium residential remodeling in the Bay Area.
-              Built with precision. Managed with care.
+            <p className="mt-7 max-w-sm text-[0.84rem] font-light leading-[1.75] text-cream/[0.38]">
+              Bay Area design-build for kitchens, baths, ADUs, and full-home remodels — led
+              in-house with disciplined communication and finish standards that hold up to
+              daily life.
             </p>
           </div>
 
-          <div>
-            <h4 className="text-[10px] font-medium uppercase tracking-[0.15em] text-cream/30">
-              Navigation
-            </h4>
-            <nav className="mt-4 flex flex-col gap-2.5">
-              {NAV_LINKS.map((link) => (
-                <a
-                  key={link.href}
-                  href={link.href}
-                  className="text-[0.8rem] text-cream/45 transition-colors duration-300 hover:text-sage"
-                >
-                  {link.label}
-                </a>
-              ))}
-            </nav>
-          </div>
-
-          <div>
-            <h4 className="text-[10px] font-medium uppercase tracking-[0.15em] text-cream/30">
-              Contact
-            </h4>
-            <div className="mt-4 space-y-2.5 text-[0.8rem] text-cream/45">
-              <p>
-                <a
-                  href="mailto:office@pristineconstructionllc.com"
-                  className="transition-colors duration-300 hover:text-sage"
-                >
-                  office@pristineconstructionllc.com
-                </a>
-              </p>
-              <p>
-                <a
-                  href="tel:+14084218997"
-                  className="transition-colors duration-300 hover:text-sage"
-                >
-                  (408) 421-8997
-                </a>
-              </p>
-              <p>San Jose, CA</p>
-              <p>Mon – Fri: 7am – 6pm</p>
+          <div className="grid gap-12 sm:grid-cols-2 md:col-span-7 md:grid-cols-2 md:gap-10 lg:gap-14">
+            <div>
+              <h4 className="text-[10px] font-medium uppercase tracking-[0.22em] text-cream/[0.28]">
+                Navigate
+              </h4>
+              <div className="mt-6 h-px w-10 bg-sage/[0.22]" />
+              <nav className="mt-6 flex flex-col gap-3">
+                {NAV_LINKS.map((link) => (
+                  <a
+                    key={link.href}
+                    href={link.href}
+                    className="w-fit text-[0.82rem] font-light text-cream/[0.42] transition-[color,transform] duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] hover:translate-x-0.5 hover:text-sage-light"
+                  >
+                    {link.label}
+                  </a>
+                ))}
+              </nav>
             </div>
-            <div className="mt-5 flex gap-4">
-              {SOCIAL_LINKS.map((link) => (
-                <a
-                  key={link.label}
-                  href={link.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label={link.label}
-                  className="text-cream/25 transition-colors duration-300 hover:text-sage"
-                >
-                  {link.icon}
-                </a>
-              ))}
+
+            <div>
+              <h4 className="text-[10px] font-medium uppercase tracking-[0.22em] text-cream/[0.28]">
+                Studio
+              </h4>
+              <div className="mt-6 h-px w-10 bg-sage/[0.22]" />
+              <div className="mt-6 space-y-5 text-[0.82rem] font-light leading-[1.65] text-cream/[0.42]">
+                <p>
+                  <a
+                    href="mailto:office@pristineconstructionllc.com"
+                    className="transition-colors duration-500 hover:text-sage-light"
+                  >
+                    office@pristineconstructionllc.com
+                  </a>
+                </p>
+                <p>
+                  <a
+                    href="tel:+14084218997"
+                    className="transition-colors duration-500 hover:text-sage-light"
+                  >
+                    (408) 421-8997
+                  </a>
+                </p>
+                <p className="max-w-[14rem] text-cream/[0.36]">
+                  2152 Caracas Ct
+                  <br />
+                  San Jose, CA 95122
+                </p>
+                <p className="text-[0.75rem] uppercase tracking-[0.14em] text-cream/[0.28]">
+                  Mon – Fri · 7am – 6pm
+                </p>
+              </div>
+
+              <div className="mt-8 flex gap-5">
+                {SOCIAL_LINKS.map((link) => (
+                  <a
+                    key={link.label}
+                    href={link.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={link.label}
+                    className="flex h-9 w-9 items-center justify-center rounded-full border border-cream/[0.1] text-cream/[0.32] transition-[color,border-color,transform] duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] hover:-translate-y-px hover:border-cream/[0.22] hover:text-sage-light"
+                  >
+                    {link.icon}
+                  </a>
+                ))}
+              </div>
             </div>
           </div>
         </div>
-      </div>
 
-      <div className="border-t border-cream/[0.06]">
-        <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-2 px-6 py-5 text-[0.7rem] text-cream/20 md:flex-row md:px-8">
+        <div className="mt-10 flex flex-col items-start justify-between gap-4 text-[0.68rem] font-light uppercase tracking-[0.14em] text-cream/[0.22] md:flex-row md:items-center">
           <p>&copy; {new Date().getFullYear()} Pristine Construction LLC</p>
-          <p>CA Licensed &amp; Insured</p>
+          <p className="md:text-right">Licensed · Insured · In-House Team · Bay Area</p>
         </div>
       </div>
     </footer>

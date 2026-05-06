@@ -46,8 +46,8 @@ export default function ProjectDetailModal({
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
-          transition={{ duration: 0.45, ease: [0.32, 0.72, 0, 1] }}
-          className="fixed inset-0 z-50 overflow-y-auto overscroll-contain bg-[#10100f]/90 backdrop-blur-[8px]"
+          transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
+          className="fixed inset-0 z-50 overflow-y-auto overscroll-contain bg-[#10100f]/88 backdrop-blur-[12px]"
         >
           <button
             type="button"
@@ -57,10 +57,10 @@ export default function ProjectDetailModal({
           />
 
           <motion.div
-            initial={{ opacity: 0, y: 32, scale: 0.98 }}
+            initial={{ opacity: 0, y: 28, scale: 0.986 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
-            exit={{ opacity: 0, y: 24, scale: 0.99 }}
-            transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
+            exit={{ opacity: 0, y: 20, scale: 0.992 }}
+            transition={{ duration: 0.62, ease: [0.22, 1, 0.36, 1] }}
             className="relative z-[51] mx-auto my-4 min-h-[calc(100dvh-2rem)] max-w-6xl md:my-8"
           >
             <div className="overflow-hidden rounded-sm border border-charcoal/[0.08] bg-mist shadow-[0_32px_100px_-36px_rgba(0,0,0,0.88)]">
@@ -84,7 +84,7 @@ export default function ProjectDetailModal({
 
                 <div className="absolute inset-x-0 bottom-0 px-6 pb-8 pt-24 md:px-12 md:pb-12 lg:px-14">
                   <p className="text-[10px] font-medium uppercase tracking-[0.32em] text-forest/40">
-                    03 / Portfolio
+                    05 / Portfolio
                   </p>
                   <h2
                     id={`project-${project.id}-title`}

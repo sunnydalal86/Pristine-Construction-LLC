@@ -3,7 +3,6 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 import SectionWrapper from "../ui/SectionWrapper";
-import SectionLabel from "../ui/SectionLabel";
 
 const POSTS = [
   {
@@ -36,12 +35,17 @@ export default function Blog() {
   return (
     <SectionWrapper id="blog">
       <div className="text-center">
-        <div className="mx-auto mb-6 flex items-center justify-center gap-4">
+        <p className="text-[10px] font-medium uppercase tracking-[0.32em] text-olive/50">
+          07 / Insights
+        </p>
+        <div className="mx-auto mt-8 flex items-center justify-center gap-5">
           <div className="h-px w-12 bg-olive/25" />
-          <SectionLabel>Insights</SectionLabel>
+          <span className="text-[10px] font-medium uppercase tracking-[0.18em] text-olive/70">
+            Field Notes
+          </span>
           <div className="h-px w-12 bg-olive/25" />
         </div>
-        <h2 className="font-serif text-[clamp(1.75rem,3vw,2.75rem)] tracking-[-0.02em]">
+        <h2 className="mt-8 font-serif text-[clamp(1.75rem,3vw,2.75rem)] tracking-[-0.02em]">
           From the Field
         </h2>
         <p className="mx-auto mt-4 max-w-md text-[0.95rem] leading-relaxed text-forest/50">

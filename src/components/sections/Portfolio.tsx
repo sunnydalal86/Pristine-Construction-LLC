@@ -82,23 +82,23 @@ export default function Portfolio() {
 
       <header className="relative mx-auto max-w-3xl text-center">
         <p className="text-[10px] font-medium uppercase tracking-[0.32em] text-olive/45">
-          03 / Portfolio
+          05 / Portfolio
         </p>
 
         <div className="mx-auto mt-8 flex justify-center">
-          <div className="h-px w-24 bg-forest/10" />
+          <div className="h-px w-28 bg-forest/[0.11]" />
         </div>
 
-        <h2 className="mx-auto mt-10 max-w-2xl font-serif text-[clamp(2rem,4.2vw,3.25rem)] font-normal leading-[1.06] tracking-[-0.035em] text-forest">
-          Featured Transformations
+        <h2 className="mx-auto mt-10 max-w-3xl font-serif text-[clamp(2rem,4.2vw,3.25rem)] font-normal leading-[1.06] tracking-[-0.035em] text-forest">
+          Case Study Gallery
         </h2>
 
-        <p className="mx-auto mt-8 max-w-xl px-2 text-[0.98rem] font-normal leading-[1.75] tracking-[-0.01em] text-forest/52">
-          A curated look at the craftsmanship, finish quality, and project execution
-          behind the Pristine standard.
+        <p className="mx-auto mt-8 max-w-xl px-2 text-[0.98rem] font-normal leading-[1.78] tracking-[-0.01em] text-forest/50">
+          An editorial archive of craftsmanship and execution — selected for
+          scale, restraint, and the kind of finish work that survives daily use.
         </p>
 
-        <div className="mx-auto mt-12 h-px w-full max-w-xs bg-gradient-to-r from-transparent via-forest/12 to-transparent" />
+        <div className="mx-auto mt-12 h-px w-full max-w-sm bg-gradient-to-r from-transparent via-forest/[0.12] to-transparent" />
       </header>
 
       <PortfolioGrid projects={PROJECTS} onSelectProject={setSelectedId} />

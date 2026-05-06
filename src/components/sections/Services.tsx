@@ -3,7 +3,6 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 import SectionWrapper from "../ui/SectionWrapper";
-import SectionLabel from "../ui/SectionLabel";
 
 const SERVICES = [
   {
@@ -33,12 +32,17 @@ export default function Services() {
   return (
     <SectionWrapper id="services">
       <div className="text-center">
-        <div className="mx-auto mb-6 flex items-center justify-center gap-4">
+        <p className="text-[10px] font-medium uppercase tracking-[0.32em] text-olive/50">
+          04 / Services
+        </p>
+        <div className="mx-auto mt-8 flex items-center justify-center gap-5">
           <div className="h-px w-12 bg-olive/25" />
-          <SectionLabel>Services</SectionLabel>
+          <span className="text-[10px] font-medium uppercase tracking-[0.18em] text-olive/70">
+            Capabilities
+          </span>
           <div className="h-px w-12 bg-olive/25" />
         </div>
-        <h2 className="font-serif text-[clamp(1.75rem,3vw,2.75rem)] tracking-[-0.02em]">
+        <h2 className="mt-8 font-serif text-[clamp(1.75rem,3vw,2.75rem)] tracking-[-0.02em]">
           What We Build
         </h2>
         <p className="mx-auto mt-4 max-w-lg text-[0.95rem] leading-relaxed text-forest/50">

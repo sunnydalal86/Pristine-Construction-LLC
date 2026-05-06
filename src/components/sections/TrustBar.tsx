@@ -5,10 +5,10 @@ import { motion } from "framer-motion";
 const TRUST_ITEMS = [
   { label: "Licensed & Insured", icon: "shield" },
   { label: "In-House Crew", icon: "team" },
-  { label: "200+ Projects", icon: "grid" },
-  { label: "10+ Years", icon: "clock" },
-  { label: "Bay Area Based", icon: "pin" },
-  { label: "Design to Build", icon: "pencil" },
+  { label: "Dedicated Project Leadership", icon: "pm" },
+  { label: "200+ Completed Projects", icon: "grid" },
+  { label: "10+ Years in Practice", icon: "clock" },
+  { label: "Bay Area · Referral-Led", icon: "pin" },
 ];
 
 function TrustIcon({ type }: { type: string }) {
@@ -45,10 +45,10 @@ function TrustIcon({ type }: { type: string }) {
           <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" />
         </svg>
       );
-    case "pencil":
+    case "pm":
       return (
         <svg className={cls} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-          <path strokeLinecap="round" strokeLinejoin="round" d="M9.53 16.122a3 3 0 00-5.78 1.128 2.25 2.25 0 01-2.4 2.245 4.5 4.5 0 008.4-2.245c0-.399-.078-.78-.22-1.128zm0 0a15.998 15.998 0 003.388-1.62m-5.043-.025a15.994 15.994 0 011.622-3.395m3.42 3.42a15.995 15.995 0 004.764-4.648l3.876-5.814a1.151 1.151 0 00-1.597-1.597L14.146 6.32a15.996 15.996 0 00-4.649 4.763m3.42 3.42a6.776 6.776 0 00-3.42-3.42" />
+          <path strokeLinecap="round" strokeLinejoin="round" d="M8.25 6.75h12M8.25 12h12m-12 5.25h12M3.75 6.75h.007v.008H3.75V6.75zm0 5.25h.007v.008H3.75v-.008zm0 5.25h.007v.008H3.75v-.008z" />
         </svg>
       );
     default:
