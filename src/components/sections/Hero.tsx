@@ -75,14 +75,13 @@ export default function Hero() {
             initial={reduceMotion ? false : { opacity: 0, y: 22 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ ...soft, delay: reduceMotion ? 0 : 0.32 }}
-            className="font-serif text-[clamp(2rem,4.2vw,3.85rem)] leading-[1.08] tracking-[-0.035em] text-cream-light"
+            className="font-serif text-[clamp(2rem,4.2vw,3.85rem)] leading-[1.1] tracking-[-0.035em]"
           >
-            <span className="block pb-2 sm:pb-2.5 md:pb-3">Bay Area Remodeling</span>
-            <span className="block">
-              Built Around{" "}
-              <span className="text-sage-light/[0.92]">
-                Precision, Communication, and Craftsmanship
-              </span>
+            <span className="block pb-5 text-cream-light sm:pb-6 md:pb-7">
+              Bay Area Remodeling
+            </span>
+            <span className="block text-sage-light/82">
+              Built Around Precision, Communication, and Craftsmanship
             </span>
           </motion.h1>
 
