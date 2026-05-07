@@ -6,7 +6,7 @@ const TRUST_ITEMS = [
   { label: "Licensed & Insured", icon: "shield" },
   { label: "In-House Crew", icon: "team" },
   { label: "Dedicated Project Leadership", icon: "pm" },
-  { label: "200+ Completed Projects", icon: "grid" },
+  { label: "100+ Completed Projects", icon: "grid" },
   { label: "10+ Years in Practice", icon: "clock" },
   { label: "Bay Area · Referral-Led", icon: "pin" },
 ];
@@ -66,20 +66,20 @@ export default function TrustBar() {
         viewport={{ once: true }}
         transition={{ duration: 0.6, delay: 0.1 }}
       >
-        <div className="flex flex-wrap items-center justify-center gap-x-8 gap-y-4 md:gap-x-12 lg:justify-between">
+        <div className="grid w-full grid-cols-2 gap-x-6 gap-y-5 sm:grid-cols-3 lg:grid-cols-6 lg:gap-x-4 lg:gap-y-4 xl:gap-x-8">
           {TRUST_ITEMS.map((item, i) => (
             <motion.div
               key={item.label}
-              className="flex items-center gap-2.5"
+              className="flex min-w-0 items-start gap-2.5 lg:items-center"
               initial={{ opacity: 1, y: 0 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.15 + i * 0.06, duration: 0.4 }}
             >
-              <span className="text-olive/60">
+              <span className="shrink-0 text-olive/60">
                 <TrustIcon type={item.icon} />
               </span>
-              <span className="text-[11px] font-medium uppercase tracking-[0.14em] text-forest/55">
+              <span className="min-w-0 text-[11px] font-medium uppercase leading-snug tracking-[0.14em] text-forest/55">
                 {item.label}
               </span>
             </motion.div>

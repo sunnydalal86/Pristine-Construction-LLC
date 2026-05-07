@@ -137,9 +137,12 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="mt-10 flex flex-col items-start justify-between gap-4 text-[0.68rem] font-light uppercase tracking-[0.14em] text-cream/[0.22] md:flex-row md:items-center">
+        <div className="mt-10 flex flex-col gap-4 text-[0.68rem] font-light uppercase tracking-[0.14em] text-cream/[0.22] md:flex-row md:flex-wrap md:items-center md:justify-between md:gap-x-6">
           <p>&copy; {new Date().getFullYear()} Pristine Construction LLC</p>
-          <p className="md:text-right">Licensed · Insured · In-House Team · Bay Area</p>
+          <p className="md:text-center">Licensed · Insured · In-House Team · Bay Area</p>
+          <p className="normal-case tracking-[0.06em] md:text-right text-cream/[0.28]">
+            Website by Dizzle Digital
+          </p>
         </div>
       </div>
     </footer>

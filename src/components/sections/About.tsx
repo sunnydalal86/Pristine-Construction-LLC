@@ -23,7 +23,7 @@ const PRINCIPLES = [
 
 const STATS = [
   { value: "10+", label: "Years in Business" },
-  { value: "200+", label: "Projects Delivered" },
+  { value: "100+", label: "Projects Delivered" },
   { value: "100%", label: "Referral-Based Growth" },
 ];
 

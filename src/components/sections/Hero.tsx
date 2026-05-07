@@ -1,7 +1,13 @@
 "use client";
 
 import { motion, useReducedMotion } from "framer-motion";
+import Image from "next/image";
 import Button from "../ui/Button";
+
+const HERO_IMAGE = "/images/hero.png";
+
+const HERO_TYPE_SHADOW =
+  "[text-shadow:0_1px_2px_rgba(0,0,0,0.65),0_4px_28px_rgba(0,0,0,0.45)]";
 
 export default function Hero() {
   const reduceMotion = useReducedMotion() ?? false;
@@ -12,38 +18,45 @@ export default function Hero() {
 
   return (
     <section className="relative flex min-h-screen items-end overflow-hidden bg-charcoal">
-      {/* Solid gradient backdrop (no photo — preview layout) */}
+      <div className="absolute inset-0" aria-hidden>
+        <Image
+          src={HERO_IMAGE}
+          alt=""
+          fill
+          className="pointer-events-none object-cover object-center"
+          sizes="100vw"
+          priority
+        />
+      </div>
       <div
-        className="absolute inset-0 bg-gradient-to-br from-charcoal via-forest to-forest-light"
+        className="absolute inset-0 bg-gradient-to-br from-charcoal/85 via-charcoal/55 to-black/62"
         aria-hidden
       />
       <div
-        className="absolute inset-0 bg-gradient-to-t from-black/55 via-transparent to-black/25"
+        className="absolute inset-0 bg-gradient-to-t from-black/72 via-black/20 to-black/42"
+        aria-hidden
+      />
+      <div
+        className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/28 to-transparent max-md:via-black/45"
         aria-hidden
       />
 
-      {/* Architectural overlay details */}
       <div className="pointer-events-none absolute inset-0 overflow-hidden">
-        {/* Corner framing - top left */}
         <div className="absolute top-8 left-8 md:top-12 md:left-12">
           <div className="h-16 w-px bg-white/10" />
           <div className="absolute top-0 left-0 h-px w-16 bg-white/10" />
         </div>
-        {/* Corner framing - top right */}
         <div className="absolute top-8 right-8 md:top-12 md:right-12">
           <div className="ml-auto h-16 w-px bg-white/10" />
           <div className="absolute top-0 right-0 h-px w-16 bg-white/10" />
         </div>
-        {/* Corner framing - bottom right */}
         <div className="absolute bottom-28 right-8 md:bottom-16 md:right-12">
           <div className="ml-auto h-16 w-px bg-white/[0.07]" />
           <div className="absolute bottom-0 right-0 h-px w-16 bg-white/[0.07]" />
         </div>
-        {/* Subtle grid lines */}
         <div className="absolute top-1/4 right-0 left-0 h-px bg-white/[0.03]" />
         <div className="absolute top-2/4 right-0 left-0 h-px bg-white/[0.03]" />
         <div className="absolute top-3/4 right-0 left-0 h-px bg-white/[0.03]" />
-        {/* Measurement mark */}
         <div className="absolute top-1/2 right-8 hidden -translate-y-1/2 flex-col items-center gap-1 md:flex md:right-12">
           <div className="h-12 w-px bg-white/[0.08]" />
           <span className="origin-center translate-y-3 rotate-90 text-[8px] font-light tracking-[0.2em] text-white/20">
@@ -66,16 +79,16 @@ export default function Hero() {
             initial={reduceMotion ? false : { opacity: 0, y: 14 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ ...soft, delay: reduceMotion ? 0 : 0.22 }}
-            className="mb-4 block text-[11px] font-medium uppercase tracking-[0.25em] text-sage-light/90"
+            className={`mb-4 block text-[11px] font-medium uppercase tracking-[0.25em] text-sage-light/95 ${HERO_TYPE_SHADOW}`}
           >
-            Bay Area Design-Build
+            Bay Area Design & Build
           </motion.span>
 
           <motion.h1
             initial={reduceMotion ? false : { opacity: 0, y: 22 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ ...soft, delay: reduceMotion ? 0 : 0.32 }}
-            className="font-serif text-[clamp(2rem,4.2vw,3.85rem)] leading-[1.1] tracking-[-0.035em]"
+            className={`font-serif text-[clamp(2rem,4.2vw,3.85rem)] leading-[1.1] tracking-[-0.035em] ${HERO_TYPE_SHADOW}`}
           >
             <span className="block pb-5 text-cream-light sm:pb-6 md:pb-7">
               Bay Area Remodeling
@@ -89,9 +102,9 @@ export default function Hero() {
             initial={reduceMotion ? false : { opacity: 0, y: 18 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ ...soft, delay: reduceMotion ? 0 : 0.46 }}
-            className="mt-7 max-w-2xl text-[1.04rem] font-light leading-[1.78] text-cream/71 md:text-[1.065rem]"
+            className={`mt-7 max-w-2xl text-[1.04rem] font-light leading-[1.78] text-cream/76 md:text-[1.065rem] ${HERO_TYPE_SHADOW}`}
           >
-            Kitchens, bathrooms, ADUs, and full-home remodels — delivered by an
+            Kitchens, bathrooms, ADUs, new construction, and full-home remodels — delivered by an
             in-house team with dedicated project management. From structured
             planning through final punch list, you work with accountable people,
             predictable cadence, and workmanship you can scrutinize — not vague
@@ -121,9 +134,9 @@ export default function Hero() {
             initial={reduceMotion ? false : { opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: reduceMotion ? 0 : 0.9, delay: reduceMotion ? 0 : 0.85 }}
-            className="mt-7 text-[11px] uppercase tracking-[0.2em] text-tan-light/48"
+            className={`mt-7 text-[11px] uppercase tracking-[0.2em] text-tan-light/75 ${HERO_TYPE_SHADOW}`}
           >
-            Licensed · Insured · San Jose, CA · Since 2014
+            San Jose, CA · Since 2014
           </motion.p>
         </div>
       </div>

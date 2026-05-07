@@ -143,7 +143,7 @@ export default function ProjectDetailModal({
                 </div>
 
                 <p className="mt-16 border-t border-forest/[0.06] pt-10 text-center text-[10px] font-medium uppercase tracking-[0.22em] text-forest/36">
-                  Pristine Construction · Bay Area design-build
+                  Pristine Construction · Bay Area design & build
                 </p>
               </div>
             </div>

@@ -41,16 +41,6 @@ const PROJECT_DEFS = [
     coverImage: "DSC02103.jpg",
   },
   {
-    sourceDir: "Bean Creek",
-    slug: "bean-creek",
-    title: "Bean Creek residence",
-    category: "Whole home",
-    projectType: "Residential",
-    location: "Bay Area, CA",
-    scope: "Interior renovation, architectural millwork, finish carpentry",
-    completion: "Recent project",
-  },
-  {
     sourceDir: "California St.",
     slug: "california-street",
     title: "California Street",

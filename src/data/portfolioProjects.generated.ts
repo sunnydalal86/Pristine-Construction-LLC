@@ -90,33 +90,6 @@ export const PORTFOLIO_PROJECTS_GENERATED: PortfolioProjectGenerated[] = [
     ]
   },
   {
-    "id": "bean-creek",
-    "slug": "bean-creek",
-    "title": "Bean Creek residence",
-    "category": "Whole home",
-    "projectType": "Residential",
-    "location": "Bay Area, CA",
-    "scope": "Interior renovation, architectural millwork, finish carpentry",
-    "completion": "Recent project",
-    "description": "A curated look at the craftsmanship, finish quality, and project execution behind this Pristine Construction project.",
-    "images": [
-      "/portfolio/bean-creek/001_spoof-1-of-15.jpg",
-      "/portfolio/bean-creek/002_spoof-2-of-15.jpg",
-      "/portfolio/bean-creek/003_spoof-3-of-15.jpg",
-      "/portfolio/bean-creek/004_spoof-4-of-15.jpg",
-      "/portfolio/bean-creek/005_spoof-5-of-15.jpg",
-      "/portfolio/bean-creek/006_spoof-6-of-15.jpg",
-      "/portfolio/bean-creek/007_spoof-7-of-15.jpg",
-      "/portfolio/bean-creek/008_spoof-9-of-15.jpg",
-      "/portfolio/bean-creek/009_spoof-10-of-15.jpg",
-      "/portfolio/bean-creek/010_spoof-11-of-15.jpg",
-      "/portfolio/bean-creek/011_spoof-12-of-15.jpg",
-      "/portfolio/bean-creek/012_spoof-13-of-15.jpg",
-      "/portfolio/bean-creek/013_spoof-14-of-15.jpg",
-      "/portfolio/bean-creek/014_spoof-15-of-15.jpg"
-    ]
-  },
-  {
     "id": "california-street",
     "slug": "california-street",
     "title": "California Street",
