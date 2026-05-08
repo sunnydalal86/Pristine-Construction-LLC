@@ -29,15 +29,15 @@ export default function Hero() {
         />
       </div>
       <div
-        className="absolute inset-0 bg-gradient-to-br from-charcoal/52 via-charcoal/30 to-black/34"
+        className="absolute inset-0 bg-gradient-to-br from-charcoal/36 via-charcoal/18 to-black/22"
         aria-hidden
       />
       <div
-        className="absolute inset-0 bg-gradient-to-t from-black/35 via-black/8 to-black/18"
+        className="absolute inset-0 bg-gradient-to-t from-black/22 via-black/5 to-black/12"
         aria-hidden
       />
       <div
-        className="absolute inset-0 bg-gradient-to-r from-black/36 via-black/10 to-transparent max-md:via-black/22"
+        className="absolute inset-0 bg-gradient-to-r from-black/24 via-black/6 to-transparent max-md:via-black/14"
         aria-hidden
       />
 
@@ -79,7 +79,7 @@ export default function Hero() {
             initial={reduceMotion ? false : { opacity: 0, y: 14 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ ...soft, delay: reduceMotion ? 0 : 0.22 }}
-            className={`mb-4 block text-[11px] font-medium uppercase tracking-[0.25em] text-sage-light/95 ${HERO_TYPE_SHADOW}`}
+            className={`mb-4 block text-[11px] font-medium uppercase tracking-[0.25em] text-cream-light ${HERO_TYPE_SHADOW}`}
           >
             Bay Area Design & Build
           </motion.span>
@@ -93,7 +93,7 @@ export default function Hero() {
             <span className="block pb-5 text-cream-light sm:pb-6 md:pb-7">
               Bay Area Remodeling
             </span>
-            <span className="block text-sage-light/82">
+            <span className="block text-sage-light/92">
               Built Around Precision, Communication, and Craftsmanship
             </span>
           </motion.h1>
@@ -102,7 +102,7 @@ export default function Hero() {
             initial={reduceMotion ? false : { opacity: 0, y: 18 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ ...soft, delay: reduceMotion ? 0 : 0.46 }}
-            className={`mt-7 max-w-2xl text-[1.04rem] font-light leading-[1.78] text-cream/76 md:text-[1.065rem] ${HERO_TYPE_SHADOW}`}
+            className={`mt-7 max-w-2xl text-[1.04rem] font-light leading-[1.78] text-cream-light/92 md:text-[1.065rem] ${HERO_TYPE_SHADOW}`}
           >
             Kitchens, bathrooms, ADUs, new construction, and full-home remodels — delivered by an
             in-house team with dedicated project management. From structured
@@ -134,7 +134,7 @@ export default function Hero() {
             initial={reduceMotion ? false : { opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: reduceMotion ? 0 : 0.9, delay: reduceMotion ? 0 : 0.85 }}
-            className={`mt-7 text-[11px] uppercase tracking-[0.2em] text-tan-light/75 ${HERO_TYPE_SHADOW}`}
+            className={`mt-7 text-[11px] uppercase tracking-[0.2em] text-tan-light/88 ${HERO_TYPE_SHADOW}`}
           >
             San Jose, CA · Since 2014
           </motion.p>
@@ -154,7 +154,7 @@ export default function Hero() {
           }
           className="flex flex-col items-center gap-2"
         >
-          <span className="text-[9px] uppercase tracking-[0.25em] text-tan/40">
+          <span className="text-[9px] uppercase tracking-[0.25em] text-tan-light/72">
             Scroll
           </span>
           <div className="h-8 w-px bg-tan/25" />

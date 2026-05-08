@@ -53,8 +53,8 @@ export default function Navigation() {
                 href={link.href}
                 className={`text-[0.8rem] font-medium tracking-wide transition-colors duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] ${
                   scrolled
-                    ? "text-forest/55 hover:text-olive"
-                    : "text-cream/70 hover:text-cream"
+                    ? "text-forest/72 hover:text-olive"
+                    : "text-cream-light/95 hover:text-cream-light"
                 }`}
               >
                 {link.label}
@@ -76,7 +76,7 @@ export default function Navigation() {
                   ? "translate-y-2 rotate-45 bg-forest"
                   : scrolled
                   ? "bg-forest"
-                  : "bg-cream"
+                  : "bg-cream-light"
               }`}
             />
             <span
@@ -85,7 +85,7 @@ export default function Navigation() {
                   ? "opacity-0"
                   : scrolled
                   ? "bg-forest"
-                  : "bg-cream"
+                  : "bg-cream-light"
               }`}
             />
             <span
@@ -94,7 +94,7 @@ export default function Navigation() {
                   ? "-translate-y-2 -rotate-45 bg-forest"
                   : scrolled
                   ? "bg-forest"
-                  : "bg-cream"
+                  : "bg-cream-light"
               }`}
             />
           </button>
@@ -116,7 +116,7 @@ export default function Navigation() {
                   key={link.href}
                   href={link.href}
                   onClick={() => setMobileOpen(false)}
-                  className="border-b border-tan/10 py-3 text-[0.85rem] font-medium text-forest/70 transition-colors hover:text-olive last:border-0"
+                  className="border-b border-tan/10 py-3 text-[0.85rem] font-medium text-forest/82 transition-colors hover:text-olive last:border-0"
                 >
                   {link.label}
                 </a>
