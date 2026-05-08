@@ -39,8 +39,8 @@ export default function Navigation() {
             <Image
               src="/images/logo.png"
               alt="Pristine Construction"
-              width={1945}
-              height={1402}
+              width={794}
+              height={183}
               className="h-14 w-auto md:h-16"
               priority
             />

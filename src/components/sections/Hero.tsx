@@ -29,15 +29,15 @@ export default function Hero() {
         />
       </div>
       <div
-        className="absolute inset-0 bg-gradient-to-br from-charcoal/85 via-charcoal/55 to-black/62"
+        className="absolute inset-0 bg-gradient-to-br from-charcoal/52 via-charcoal/30 to-black/34"
         aria-hidden
       />
       <div
-        className="absolute inset-0 bg-gradient-to-t from-black/72 via-black/20 to-black/42"
+        className="absolute inset-0 bg-gradient-to-t from-black/35 via-black/8 to-black/18"
         aria-hidden
       />
       <div
-        className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/28 to-transparent max-md:via-black/45"
+        className="absolute inset-0 bg-gradient-to-r from-black/36 via-black/10 to-transparent max-md:via-black/22"
         aria-hidden
       />
 

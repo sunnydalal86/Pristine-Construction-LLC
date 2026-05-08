@@ -57,8 +57,8 @@ export default function Footer() {
             <Image
               src="/images/logo.png"
               alt="Pristine Construction"
-              width={1945}
-              height={1402}
+              width={794}
+              height={183}
               className="h-14 w-auto md:h-[4.25rem]"
             />
             <p className="mt-7 max-w-sm text-[0.84rem] font-light leading-[1.75] text-cream/[0.38]">
