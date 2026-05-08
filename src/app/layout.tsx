@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { DM_Serif_Display, Inter } from "next/font/google";
+import { getSiteUrl } from "@/lib/siteUrl";
 import "./globals.css";
 
 const dmSerif = DM_Serif_Display({
@@ -15,7 +16,7 @@ const inter = Inter({
   display: "swap",
 });
 
-const siteUrl = "https://www.pristineconstructionllc.com";
+const siteUrl = getSiteUrl();
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
