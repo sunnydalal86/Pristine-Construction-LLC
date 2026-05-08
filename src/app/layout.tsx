@@ -32,9 +32,9 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: "/images/logo.png",
-        width: 794,
-        height: 183,
+        url: "/images/og-default.jpg",
+        width: 1200,
+        height: 630,
         alt: "Pristine Construction — Bay Area design-build",
       },
     ],
@@ -44,7 +44,7 @@ export const metadata: Metadata = {
     title: "Pristine Construction LLC",
     description:
       "Premium bathroom remodels, kitchen renovations, and custom ADUs in the Bay Area.",
-    images: ["/images/logo.png"],
+    images: ["/images/og-default.jpg"],
   },
   robots: { index: true, follow: true },
 };
