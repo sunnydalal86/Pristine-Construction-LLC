@@ -23,7 +23,7 @@ Start the dev server:
 npm run dev
 ```
 
-Open **[http://127.0.0.1:3000](http://127.0.0.1:3000)** in your browser (`localhost` may resolve differently on some networks).
+Open **[http://127.0.0.1:3000](http://127.0.0.1:3000)** in your browser (`localhost` may resolve differently on some networks). The dev script frees port **3000** first so you are not left hitting an old process (which often shows a **404**) while Next.js quietly starts on another port.
 
 Other scripts:
 
