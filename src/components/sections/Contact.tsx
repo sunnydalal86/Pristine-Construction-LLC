@@ -42,12 +42,11 @@ export default function Contact() {
         method: "POST",
         headers: {
           "Content-Type": "application/x-www-form-urlencoded",
-          Accept: "application/json",
         },
         body: formDataToUrlEncoded(form),
       });
-      const data = (await res.json().catch(() => null)) as { ok?: boolean } | null;
-      if (!res.ok || !data?.ok) {
+      // Netlify responds with 200 + HTML (default success page), not JSON — do not require a JSON body.
+      if (!res.ok) {
         throw new Error("Form submission failed");
       }
       setSubmitted(true);
