@@ -42,12 +42,31 @@ export default function Contact() {
         method: "POST",
         headers: {
           "Content-Type": "application/x-www-form-urlencoded",
+          // Netlify’s handler may rely on content negotiation; dropping this broke
+          // submissions/emails on deploy while still returning 200 from the static page.
+          Accept: "application/json",
         },
         body: formDataToUrlEncoded(form),
       });
-      // Netlify responds with 200 + HTML (default success page), not JSON — do not require a JSON body.
+      const raw = await res.text();
       if (!res.ok) {
         throw new Error("Form submission failed");
+      }
+      // Default thank-you response is HTML. If the body is JSON, only treat explicit
+      // failure fields as errors — do not require { ok: true } (old bug).
+      try {
+        const data = JSON.parse(raw) as Record<string, unknown> | null;
+        if (data && typeof data === "object" && !Array.isArray(data)) {
+          if (data.ok === false || data.success === false || data.error != null) {
+            throw new Error("Form submission failed");
+          }
+        }
+      } catch (e) {
+        if (e instanceof SyntaxError) {
+          // HTML success page — fine
+        } else {
+          throw e;
+        }
       }
       setSubmitted(true);
     } catch {
