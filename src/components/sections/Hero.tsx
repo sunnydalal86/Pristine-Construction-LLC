@@ -25,7 +25,7 @@ export default function Hero() {
             src={HERO_IMAGE}
             alt=""
             fill
-            className="pointer-events-none object-cover object-center brightness-[0.96]"
+            className="pointer-events-none object-cover object-[19%_52%] brightness-[0.96] lg:object-center"
             sizes="100vw"
             priority
           />

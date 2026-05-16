@@ -35,18 +35,19 @@ export default function Navigation() {
         }`}
       >
         <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4 md:px-8 md:py-5">
-          <a href="#" className="relative z-50 flex items-center gap-3">
+          <a href="#" className="relative z-50 flex shrink-0 items-center gap-3">
             <Image
               src="/images/logo.png"
               alt="Pristine Construction"
               width={794}
               height={183}
-              className="h-14 w-auto md:h-16"
+              className="h-14 w-auto shrink-0 md:h-16"
               priority
             />
           </a>
 
-          <div className="hidden items-center gap-8 md:flex">
+          {/* lg+ only: phones/tablets in landscape often exceed md width — keep hamburger until desktop */}
+          <div className="hidden items-center gap-8 lg:flex">
             {NAV_LINKS.map((link) => (
               <a
                 key={link.href}
@@ -67,7 +68,7 @@ export default function Navigation() {
 
           <button
             onClick={() => setMobileOpen(!mobileOpen)}
-            className="relative z-50 flex flex-col gap-1.5 md:hidden"
+            className="relative z-50 flex flex-col gap-1.5 lg:hidden"
             aria-label="Toggle menu"
           >
             <span
@@ -108,7 +109,7 @@ export default function Navigation() {
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.3, ease: "easeInOut" }}
-            className="fixed top-[72px] left-0 right-0 z-40 overflow-hidden border-b border-tan/20 bg-cream-light/98 backdrop-blur-md shadow-lg md:hidden"
+            className="fixed top-[72px] left-0 right-0 z-40 overflow-hidden border-b border-tan/20 bg-cream-light/98 backdrop-blur-md shadow-lg lg:hidden"
           >
             <div className="flex flex-col px-6 py-4">
               {NAV_LINKS.map((link) => (

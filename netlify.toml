@@ -1,4 +1,14 @@
 # Next.js static export (`output: "export"` in next.config.ts → publish `out/`)
+#
+# Contact form: Netlify detects the static HTML form named "project-inquiry" on /.
+#
+# Email when someone submits: NOT under Forms → Submissions. Use:
+#   Project configuration → Notifications → Emails and webhooks
+#   → Form submission notifications → add email (e.g. go.dizzle.llc@gmail.com).
+# Docs: https://docs.netlify.com/manage/forms/notifications/
+#
+# You still use Forms to view submission data and confirm the form exists after deploy.
+# While testing: add go.dizzle.llc@gmail.com; production: office@pristineconstructionllc.com.
 [build]
   command = "npm run build"
   publish = "out"

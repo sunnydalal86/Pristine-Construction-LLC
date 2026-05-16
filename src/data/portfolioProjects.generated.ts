@@ -249,5 +249,41 @@ export const PORTFOLIO_PROJECTS_GENERATED: PortfolioProjectGenerated[] = [
       "/portfolio/nelson-court/011_dsc06757-hdr-edit.jpg",
       "/portfolio/nelson-court/012_dsc06760-hdr.jpg"
     ]
+  },
+  {
+    "id": "kitchen",
+    "slug": "kitchen",
+    "title": "Kitchen · Cabinetry & stone",
+    "category": "Kitchen",
+    "projectType": "Residential remodel",
+    "location": "Bay Area, CA",
+    "scope": "Custom millwork, stone surfaces, appliance integration, and layered lighting",
+    "completion": "Recent project",
+    "description": "A kitchen built as the calm center of the home — where storage, circulation, and finishing details resolve into one quiet, durable whole you can live in for years.",
+    "images": [
+      "/portfolio/kitchen/001_img_4093.jpeg",
+      "/portfolio/kitchen/002_img_4094.jpeg",
+      "/portfolio/kitchen/003_img_4095.jpeg",
+      "/portfolio/kitchen/004_img_4096.jpeg",
+      "/portfolio/kitchen/005_img_4097.jpeg",
+      "/portfolio/kitchen/006_img_4098.jpeg",
+      "/portfolio/kitchen/007_img_4099.jpeg",
+      "/portfolio/kitchen/008_img_4100.jpeg",
+      "/portfolio/kitchen/009_img_4101.jpeg",
+      "/portfolio/kitchen/010_img_4102.jpeg",
+      "/portfolio/kitchen/011_img_4103.jpeg",
+      "/portfolio/kitchen/012_img_4104.jpeg",
+      "/portfolio/kitchen/013_img_4105.jpeg",
+      "/portfolio/kitchen/014_img_4106.jpeg",
+      "/portfolio/kitchen/015_img_4107.jpeg",
+      "/portfolio/kitchen/016_img_4108.jpeg",
+      "/portfolio/kitchen/017_img_4109.jpeg",
+      "/portfolio/kitchen/018_img_4110.jpeg",
+      "/portfolio/kitchen/019_img_4111.jpeg",
+      "/portfolio/kitchen/020_img_4112.jpeg",
+      "/portfolio/kitchen/021_img_4113.jpeg",
+      "/portfolio/kitchen/022_img_4114.jpeg",
+      "/portfolio/kitchen/023_img_4115.jpeg"
+    ]
   }
 ];

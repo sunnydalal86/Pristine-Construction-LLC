@@ -5,6 +5,8 @@ import { motion } from "framer-motion";
 import SectionWrapper from "../ui/SectionWrapper";
 import Button from "../ui/Button";
 
+const FORM_NAME = "project-inquiry";
+
 const SERVICE_OPTIONS = [
   "Bathroom Remodel",
   "Kitchen Remodel",
@@ -14,12 +16,46 @@ const SERVICE_OPTIONS = [
   "Other / Not Sure Yet",
 ];
 
+function formDataToUrlEncoded(form: HTMLFormElement): string {
+  const params = new URLSearchParams();
+  const data = new FormData(form);
+  data.forEach((value, key) => {
+    if (typeof value === "string") {
+      params.append(key, value);
+    }
+  });
+  return params.toString();
+}
+
 export default function Contact() {
   const [submitted, setSubmitted] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState<string | null>(null);
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    setSubmitted(true);
+    const form = e.currentTarget;
+    setSubmitError(null);
+    setSubmitting(true);
+    try {
+      const res = await fetch("/", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/x-www-form-urlencoded",
+          Accept: "application/json",
+        },
+        body: formDataToUrlEncoded(form),
+      });
+      const data = (await res.json().catch(() => null)) as { ok?: boolean } | null;
+      if (!res.ok || !data?.ok) {
+        throw new Error("Form submission failed");
+      }
+      setSubmitted(true);
+    } catch {
+      setSubmitError("Something went wrong. Please email us or call (408) 421-8997.");
+    } finally {
+      setSubmitting(false);
+    }
   };
 
   return (
@@ -166,9 +202,19 @@ export default function Contact() {
             </motion.div>
           ) : (
             <form
+              name={FORM_NAME}
+              method="POST"
+              action="/"
+              data-netlify="true"
+              netlify-honeypot="bot-field"
               onSubmit={handleSubmit}
-              className="space-y-5 rounded-xl border border-tan/20 bg-cream-light p-7 shadow-sm md:p-9"
+              className="relative space-y-5 rounded-xl border border-tan/20 bg-cream-light p-7 shadow-sm md:p-9"
             >
+              <input type="hidden" name="form-name" value={FORM_NAME} />
+              <p className="sr-only">
+                <label htmlFor="bot-field">Leave blank</label>
+                <input id="bot-field" name="bot-field" tabIndex={-1} autoComplete="off" />
+              </p>
               <div className="mb-2">
                 <span className="text-[10px] font-medium uppercase tracking-[0.14em] text-olive/60">
                   Project Inquiry
@@ -242,8 +288,18 @@ export default function Contact() {
                   className="mt-1.5 w-full resize-none rounded-lg border border-tan/40 bg-white px-4 py-3 text-[0.9rem] outline-none transition-all duration-300 placeholder:text-forest/25 focus:border-olive/50 focus:shadow-sm focus:ring-1 focus:ring-olive/10"
                 />
               </div>
-              <Button type="submit" variant="solid" className="w-full sm:w-auto">
-                Start Consultation
+              {submitError ? (
+                <p className="text-[0.8rem] text-red-800/90" role="alert">
+                  {submitError}
+                </p>
+              ) : null}
+              <Button
+                type="submit"
+                variant="solid"
+                className="w-full sm:w-auto"
+                disabled={submitting}
+              >
+                {submitting ? "Sending…" : "Start Consultation"}
               </Button>
               <p className="text-[0.75rem] text-forest/35">
                 Free consultation · No obligation · Response within 24 hours

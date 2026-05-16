@@ -103,6 +103,19 @@ const PROJECT_DEFS = [
     completion: "Recent project",
     coverImage: "DSC06718-HDR-Edit.jpg",
   },
+  {
+    sourceDir: "Kitchen",
+    slug: "kitchen",
+    title: "Kitchen · Cabinetry & stone",
+    category: "Kitchen",
+    projectType: "Residential remodel",
+    location: "Bay Area, CA",
+    scope:
+      "Custom millwork, stone surfaces, appliance integration, and layered lighting",
+    completion: "Recent project",
+    description:
+      "A kitchen built as the calm center of the home — where storage, circulation, and finishing details resolve into one quiet, durable whole you can live in for years.",
+  },
 ];
 
 const DESCRIPTION =
@@ -210,7 +223,7 @@ function main() {
       location: def.location,
       scope: def.scope,
       completion: def.completion,
-      description: DESCRIPTION,
+      description: def.description ?? DESCRIPTION,
       images: publicPaths,
     });
   }
