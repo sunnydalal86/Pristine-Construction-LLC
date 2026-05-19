@@ -22,7 +22,7 @@ const PROJECT_DEFS = [
   {
     sourceDir: "123 Corwin St. Bathroom",
     slug: "123-corwin-bathroom",
-    title: "123 Corwin Street · Bathroom",
+    title: "Corwin Street · Bathroom",
     category: "Residential bath",
     projectType: "Residential remodel",
     location: "Bay Area, CA",
@@ -32,7 +32,7 @@ const PROJECT_DEFS = [
   {
     sourceDir: "466 Benvenue ADU",
     slug: "466-benvenue-adu",
-    title: "466 Benvenue · Accessory dwelling",
+    title: "Los Altos · Accessory dwelling",
     category: "New ADU",
     projectType: "Residential — ADU",
     location: "Bay Area, CA",
