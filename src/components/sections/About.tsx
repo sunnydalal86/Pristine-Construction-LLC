@@ -27,7 +27,7 @@ const STATS = [
   { value: "100%", label: "Referral-Based Growth" },
 ];
 
-const ABOUT_VIDEO_ID = "YxqfAF3UspU";
+const ABOUT_VIDEO_ID = "2ekw1uwejW8";
 
 export default function About() {
   return (
@@ -124,7 +124,7 @@ export default function About() {
         ))}
       </div>
 
-      <div className="relative mx-auto mt-16 max-w-3xl md:mt-20 lg:mt-24">
+      <div className="relative mx-auto mt-16 max-w-4xl md:mt-20 lg:mt-24">
         <div className="relative aspect-video w-full overflow-hidden rounded-lg bg-forest/10 ring-1 ring-tan/20 shadow-sm">
           <iframe
             className="absolute inset-0 h-full w-full border-0"
