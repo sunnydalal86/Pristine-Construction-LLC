@@ -22,25 +22,11 @@ const TEAM: TeamMember[] = [
     bio: "Allan is the driving force behind Pristine Construction. His journey began with a deep-rooted interest in the construction industry, shaped by family connections. Under his stewardship, the company has flourished — embracing innovative practices and maintaining an unwavering commitment to delivering exceptional results.",
   },
   {
-    name: "Victor",
-    role: "Master Electrician",
-    specialty: "Electrical Systems",
-    image: "/images/team-victor.jpg",
-    bio: "Victor specializes in residential electrical projects. From energy-efficient lighting to cutting-edge smart home technology, he ensures every home is both functional and modern. He also takes pride in educating homeowners about sustainable energy.",
-  },
-  {
-    name: "Manuel",
-    role: "Master Plumber",
-    specialty: "Plumbing & Water Systems",
-    image: "/images/team-manuel.jpg",
-    bio: "Manuel brings unparalleled plumbing expertise to every project. From advanced water filtration systems to eco-friendly layouts, his work is characterized by meticulous attention to detail and a focus on sustainability.",
-  },
-  {
-    name: "Pil",
-    role: "Master Tradesman",
-    specialty: "Structural Builds",
-    image: "/images/team-pil.jpg",
-    bio: "Pil is a master of multiple residential subtrades — from carpentry and masonry to plumbing and electrical. His versatility and mentorship have been a guiding influence in shaping Pristine Construction's foundation.",
+    name: "Armando",
+    role: "",
+    specialty: "",
+    image: "/images/team-armando.jpg",
+    bio: "",
   },
   {
     name: "Jose",
@@ -50,39 +36,25 @@ const TEAM: TeamMember[] = [
     bio: "Jose's expertise ensures that every wall and ceiling is finished to the highest standard. His skillful craftsmanship in plastering and drywall has been pivotal in transforming residential spaces into beautiful, functional homes.",
   },
   {
-    name: "Axel",
-    role: "Multi-Trade Apprentice",
-    specialty: "General Construction",
-    image: "/images/team-axel.jpg",
-    bio: "Axel brings boundless energy and a positive attitude to every job site. Whether assisting with carpentry, plumbing, or drywall, his eagerness to learn makes him an invaluable and versatile part of our team.",
+    name: "Manuel",
+    role: "Master Plumber",
+    specialty: "Plumbing & Water Systems",
+    image: "/images/team-manuel.jpg",
+    bio: "Manuel brings unparalleled plumbing expertise to every project. From advanced water filtration systems to eco-friendly layouts, his work is characterized by meticulous attention to detail and a focus on sustainability.",
   },
   {
-    name: "Arminio",
-    role: "Master Tile Setter & Carpenter",
-    specialty: "Finish Carpentry & Tile",
-    image: "/images/team-arminio.jpg",
-    bio: "Arminio has mastered both tile setting and carpentry, bringing exceptional craftsmanship to each. His intricate tile designs and flawless finishes are consistently among the most striking features of our projects.",
+    name: "Victor",
+    role: "Master Electrician",
+    specialty: "Electrical Systems",
+    image: "/images/team-victor.jpg",
+    bio: "Victor specializes in residential electrical projects. From energy-efficient lighting to cutting-edge smart home technology, he ensures every home is both functional and modern. He also takes pride in educating homeowners about sustainable energy.",
   },
   {
-    name: "Milton",
-    role: "Painter",
-    specialty: "Paint & Decorative Finishes",
-    image: "/images/team-milton.jpg",
-    bio: "Milton brings artistry to every surface. From crisp, clean walls to intricate decorative finishes, his keen eye for color and detail creates results that are both visually stunning and enduring.",
-  },
-  {
-    name: "Bhavik",
-    role: "Architect",
-    specialty: "Architecture & Planning",
-    image: "/images/team-bhavik.jpg",
-    bio: "Bhavik brings a unique blend of creativity and technical expertise to every project. He translates client visions into detailed designs, integrating modern trends with timeless elements for spaces that are both contemporary and enduring.",
-  },
-  {
-    name: "Yelena",
-    role: "Interior Designer",
-    specialty: "Interior Design Coordination",
-    image: null,
-    bio: "Yelena crafts interiors that are both aesthetically pleasing and practical. Her work curating color palettes, selecting furnishings, and designing layouts ensures every home feels personalized, refined, and perfectly balanced.",
+    name: "Zinnia",
+    role: "",
+    specialty: "",
+    image: "/images/team-zinnia.jpg",
+    bio: "",
   },
 ];
 
@@ -161,19 +133,28 @@ function TeamBioModal({
           </svg>
         </button>
 
-        <span className="text-[10px] font-medium uppercase tracking-[0.15em] text-olive/60">
-          {member.specialty}
-        </span>
-        <p id="team-bio-title" className="mt-2 pr-10 font-serif text-xl leading-tight tracking-[-0.02em] text-forest sm:text-2xl">
+        {member.specialty ? (
+          <span className="text-[10px] font-medium uppercase tracking-[0.15em] text-olive/60">
+            {member.specialty}
+          </span>
+        ) : null}
+        <p
+          id="team-bio-title"
+          className={`pr-10 font-serif text-xl leading-tight tracking-[-0.02em] text-forest sm:text-2xl${member.specialty ? " mt-2" : ""}`}
+        >
           {member.name}
         </p>
-        <p className="mt-1 text-sm text-olive">
-          {member.role}
-        </p>
-        <div className="mt-5 h-px w-12 bg-olive/20" />
-        <p className="mt-5 text-[0.95rem] leading-[1.75] text-forest/70">
-          {member.bio}
-        </p>
+        {member.role ? (
+          <p className="mt-1 text-sm text-olive">{member.role}</p>
+        ) : null}
+        {member.bio ? (
+          <>
+            <div className="mt-5 h-px w-12 bg-olive/20" />
+            <p className="mt-5 text-[0.95rem] leading-[1.75] text-forest/70">
+              {member.bio}
+            </p>
+          </>
+        ) : null}
       </motion.div>
     </motion.div>
   );
@@ -203,7 +184,7 @@ function TeamCard({
         {member.image ? (
           <Image
             src={member.image}
-            alt={`${member.name}, ${member.role}`}
+            alt={member.role ? `${member.name}, ${member.role}` : member.name}
             fill
             className="object-cover transition-all duration-700 group-hover:scale-[1.04]"
             sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 20vw"
@@ -216,9 +197,11 @@ function TeamCard({
           <p className="font-serif text-base leading-tight text-cream-light lg:text-lg">
             {member.name}
           </p>
-          <p className="mt-0.5 text-[10px] font-medium uppercase tracking-[0.12em] text-sage-light/80">
-            {member.specialty}
-          </p>
+          {member.specialty ? (
+            <p className="mt-0.5 text-[10px] font-medium uppercase tracking-[0.12em] text-sage-light/80">
+              {member.specialty}
+            </p>
+          ) : null}
         </div>
       </button>
     </motion.div>
@@ -248,7 +231,7 @@ export default function Team() {
         </p>
       </div>
 
-      <div className="mt-16 grid grid-cols-2 gap-4 sm:grid-cols-3 sm:gap-5 lg:mt-20 lg:grid-cols-5 lg:gap-6">
+      <div className="mt-16 grid grid-cols-2 gap-4 sm:grid-cols-3 sm:gap-5 lg:mt-20 lg:grid-cols-3 lg:gap-6">
         {TEAM.map((member, i) => (
           <TeamCard
             key={member.name}
@@ -272,7 +255,7 @@ export default function Team() {
       >
         <div className="relative aspect-[16/9] overflow-hidden rounded-lg">
           <Image
-            src="/images/team-yelena.webp"
+            src="/images/team-group.jpg"
             alt="The Pristine Construction team on site"
             fill
             className="object-cover object-top"
